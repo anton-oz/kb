@@ -1,6 +1,10 @@
+// #include <linux/limits.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+// #include <sys/stat.h>
+// #include <unistd.h>
 
 /**
  * NOTE:
@@ -29,6 +33,12 @@ void print_unknown_option(char *option)
   printf("kb: unknown option '%s'\n", option);
 }
 
+int throw_error(void)
+{
+  printf("Error\n");
+  return 1;
+}
+
 /**
  * NOTE:
  * UTILITIES SECTION
@@ -37,6 +47,19 @@ void print_unknown_option(char *option)
 bool are_strings_same(char *str_1, char *str_2)
 {
   return strcmp(str_1, str_2) == 0;
+}
+
+/**
+ * NOTE:
+ * FILESYSTEM MANIPULATION
+ */
+char *get_home_dir(void)
+{
+  char *homedir;
+
+  homedir = getenv("HOME");
+  printf("%s\n", homedir);
+  return homedir;
 }
 
 /* --- */
