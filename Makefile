@@ -1,6 +1,7 @@
-CFLAGS=-Wall -g
+CC = gcc
+CFLAGS = -Wall -g
 
-all: src/index
+targets: src/index
 
 clean:
 	rm -rf src/index
